@@ -1,3 +1,4 @@
+var student_all;
 $(document).ready(function() {
     // $('#ajax-form button[type="submit"]').click((event) => {
     //   event.preventDefault()
@@ -10,8 +11,9 @@ $(document).ready(function() {
     // })
     $('#list button[type="submit"]').click((event) => {
         event.preventDefault()
-        $.get('/list_all',{
-            
+        $.get('/list_all',(data)=>{
+            student_all = data;
+            $('#list-output').html(data);
         })
         // $.get('/list_all', {
         //   fname: $('#ajax-form input[name=fname]').val(),

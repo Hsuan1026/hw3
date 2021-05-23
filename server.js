@@ -28,5 +28,6 @@ let student = JSON.parse(student_rawdata);
 //   })
 
 app.get('/list_all',(req,res)=>{
-    console.log(student);
+    res.send(student);
+    // console.log(student);
 })
