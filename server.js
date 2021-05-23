@@ -11,14 +11,22 @@ app.listen(port, () => {
     console.log(`listening on port: ${port}`)
   })
 
-app.get('/step1', (req, res) => {
-    res.send('hello world')
-  })
+let student_path = './dist/student.json';
+let student_rawdata = fs.readFileSync(student_path);
+let student = JSON.parse(student_rawdata);
 
-app.get('/step5', (req, res) => {
-    res.send(`Hello, ${req.query.fname} ${req.query.lname}`)
-  })
+// app.get('/step1', (req, res) => {
+//     res.send('hello world')
+//   })
 
-app.post('/step7', (req, res) => {
-    res.send(`Hello, ${req.body.fname} ${req.body.lname}`)
-  })
+// app.get('/step5', (req, res) => {
+//     res.send(`Hello, ${req.query.fname} ${req.query.lname}`)
+//   })
+
+// app.post('/step7', (req, res) => {
+//     res.send(`Hello, ${req.body.fname} ${req.body.lname}`)
+//   })
+
+app.get('/list_all',(req,res)=>{
+    console.log(student);
+})
