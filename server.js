@@ -12,7 +12,6 @@ app.get('/step1', (req, res) => {
     res.send('hello world')
   })
 
-let nRequests = 0
-app.get('/step4', (req, res) => {
-res.send(`this is request #${++nRequests}`)
+app.get('/step5', (req, res) => {
+res.send(`Hello, ${req.query.fname} ${req.query.lname}`)
 })
