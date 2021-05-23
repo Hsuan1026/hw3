@@ -12,7 +12,7 @@ app.listen(port, () => {
   })
 
 let student_path = './dist/student.json';
-let student_rawdata = fs.readFileSync(student_path);
+let student_rawdata = fs.readFile(student_path);
 let student = JSON.parse(student_rawdata);
 
 // app.get('/step1', (req, res) => {
