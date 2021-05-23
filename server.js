@@ -3,12 +3,11 @@ const app = express();
 const fs = require("fs");
 const port = 2048;
 
+app.use("/",express.static(__dirname));
 app.listen(port, () => {
     console.log(`listening on port: ${port}`)
   })
 
 app.get('/step1', (req, res) => {
-    // response browser
-    // 回應瀏覽器
     res.send('hello world')
   })
