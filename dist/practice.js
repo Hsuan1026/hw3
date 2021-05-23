@@ -13,7 +13,10 @@ $(document).ready(function() {
         event.preventDefault()
         $.get('/list_all',(data)=>{
             student_all = data;
-            $('#list-output').html(data);
+            for(i=0;i<Object.keys(student_all).length();i++){
+                $('#list-output').html(Object.keys(student_all)[i]);
+            }
+            
         })
         // $.get('/list_all', {
         //   fname: $('#ajax-form input[name=fname]').val(),
