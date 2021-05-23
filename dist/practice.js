@@ -14,7 +14,7 @@ $(document).ready(function() {
         $.get('/list_all',(data)=>{
             student_all = data;
             for(i=0;i<Object.keys(student_all).length;i++){
-                $('#list-output').html(Object.keys(student_all)[i]);
+                $('#list-output').append(Object.keys(student_all)[i]);
             }
             
         })
