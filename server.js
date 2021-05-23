@@ -12,6 +12,6 @@ app.get('/step1', (req, res) => {
     res.send('hello world')
   })
 
-app.get('./dist/step5', (req, res) => {
+app.get('/step5', (req, res) => {
 res.send(`Hello, ${req.query.fname} ${req.query.lname}`)
 })
