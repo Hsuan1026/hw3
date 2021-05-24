@@ -16,7 +16,6 @@ $(document).ready(function() {
             student_all = data;
             for(i=0;i<Object.keys(student_all).length;i++){
                 $('#list-output').append(`"${Object.keys(student_all)[i]}":"${student_all[Object.keys(student_all)[i]]}"<br>`);
-                
             }
             
         })
@@ -26,5 +25,13 @@ $(document).ready(function() {
         // }, (data) => {
         //   $('#ajax-output').html(data);
         // })
+    })
+    $('#search button[type="submit"]').click((event) => {
+        event.preventDefault()
+        $.get('/search_name',{
+            ID: $('#search input[name=ID]').val()
+        },(data)=>{
+            $('#name-output').html(data);
+        })
     })
 });
