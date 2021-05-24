@@ -53,6 +53,14 @@ app.get('/delete_student',(req,res)=>{
   if(student[req.query.ID]==undefined){
     res.send("Fail!!No result");
   }else{
-    res.send(`${req.query.ID} ${student[req.query.ID]}`);
+    delete student[req.query.ID];
+    fs.writeFile(student_path,JSON.stringify(student),(err)=>{
+      if(err){
+        res.send('Fail');
+      }else{
+        res.send('Success');
+      }
+    })
+    // res.send(`${req.query.ID} ${student[req.query.ID]}`);
   }
 })
