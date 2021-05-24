@@ -32,5 +32,10 @@ app.get('/list_all',(req,res)=>{
     // console.log(student);
 })
 app.get('/search_name',(req,res)=>{
-  res.send(`Hello, ${student[req.query.ID]}`)
+  if(student[req.query.ID]!=undefined){
+    res.send(`Hello, ${student[req.query.ID]}`);
+  }else{
+    res.send("No result");
+  }
+  
 })
