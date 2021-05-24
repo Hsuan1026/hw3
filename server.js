@@ -39,5 +39,13 @@ app.get('/search_name',(req,res)=>{
   }
 })
 app.get('/add_student',(req,res)=>{
-  res.send(`${req.query.ID} ${req.query.name}`);
+  student[req.query.ID] = req.query.name;
+  fs.writeFile(student_path,JSON.stringify(student),(err)=>{
+    if(err){
+      res.send('Fail');
+    }else{
+      res.send('Success');
+    }
+  })
+  // res.send(`${req.query.ID} ${req.query.name}`);
 })
