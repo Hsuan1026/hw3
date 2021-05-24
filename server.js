@@ -20,11 +20,28 @@ app.get('/list_all',(req,res)=>{
     res.send(student);
 })
 app.get('/search_name',(req,res)=>{
-  if(student[req.query.ID]!=undefined){
-    res.send(`Hello, ${student[req.query.ID]}`);
+  let all=[];
+  if(student[req.query.ID1]!=undefined){
+    all[0]=`${student[req.query.ID1]}`;
   }else{
-    res.send("No result");
+    all[0]='no';
   }
+  if(student[req.query.ID2]!=undefined){
+    all[1]=`${student[req.query.ID2]}`;
+  }else{
+    all[1]='no';
+  }
+  res.send(all);
+  // if(student[req.query.ID1]!=undefined){
+  //   if(student[req.query.ID2]!=undefined){
+  //     res.send(`Hello, ${student[req.query.ID1]} and ${student[req.query.ID2]}`);
+  //   }else{
+  //     res.send("No result");
+  //   }
+    
+  // }else{
+  //   res.send("No result");
+  // }
 })
 app.get('/add_student',(req,res)=>{
   student[req.query.ID] = req.query.name;

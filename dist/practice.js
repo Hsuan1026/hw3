@@ -14,9 +14,12 @@ $(document).ready(function() {
     $('#search button[type="submit"]').click((event) => {
         event.preventDefault()
         $.get('/search_name',{
-            ID: $('#search input[name=ID]').val()
+            ID1: $('#search input[name=ID1]').val(),
+            ID2: $('#search input[name=ID2]').val(),
         },(data)=>{
-            $('#name-output').html(data);
+            $('#name-output').html(data[0]);
+            $('#name-output').append(`<br>${data[1]}`);
+            // $('#name-output').html(data);
         })
     })
     $('#add button[type="submit"]').click((event) => {
