@@ -17,8 +17,8 @@ $(document).ready(function() {
             ID1: $('#search input[name=ID1]').val(),
             ID2: $('#search input[name=ID2]').val(),
         },(data)=>{
-            $('#name-output').html(data[0]);
-            $('#name-output').append(`<br>${data[1]}`);
+            $('#name-output').html(`Hello, ${data[0]}`);
+            $('#name-output').append(`<br>Hello, ${data[1]}`);
             // $('#name-output').html(data);
         })
     })
