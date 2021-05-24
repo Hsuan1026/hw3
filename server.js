@@ -49,7 +49,7 @@ app.get('/add_student',(req,res)=>{
   })
 })
 app.get('/delete_student',(req,res)=>{
-  res.send(req.query.ID)
+  res.send(student[req.query.ID])
   // if(student[req.query.ID]!=undefined){
   //   res.send("Fail!!No result");
   // }else{
