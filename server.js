@@ -37,5 +37,7 @@ app.get('/search_name',(req,res)=>{
   }else{
     res.send("No result");
   }
-  
+})
+app.get('/add_student',(req,res)=>{
+  res.send(`${req.query.ID} ${req.query.name}`);
 })

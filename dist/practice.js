@@ -34,4 +34,13 @@ $(document).ready(function() {
             $('#name-output').html(data);
         })
     })
+    $('#add button[type="submit"]').click((event) => {
+        event.preventDefault()
+        $.get('/add_student',{
+            ID:   $('#add input[name=ID]').val(),
+            name: $('#add input[name=sname]').val(),
+        },(data)=>{
+            $('#add-output').html(data);
+        })
+    })
 });
