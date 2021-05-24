@@ -32,5 +32,5 @@ app.get('/list_all',(req,res)=>{
     // console.log(student);
 })
 app.get('/search_name',(req,res)=>{
-  res.send(`Hello, ${req.query.ID}`)
+  res.send(`Hello, ${student[req.query.ID]}`)
 })
