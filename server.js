@@ -47,5 +47,11 @@ app.get('/add_student',(req,res)=>{
       res.send('Success');
     }
   })
-  // res.send(`${req.query.ID} ${req.query.name}`);
+})
+app.get('/delete_student',(req,res)=>{
+  if(student[req.query.ID]!=undefined){
+    res.send("Fail!!No result");
+  }else{
+    res.send(`${req.query.ID} ${student[req.query.ID]}`);
+  }
 })

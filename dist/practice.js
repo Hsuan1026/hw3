@@ -43,4 +43,12 @@ $(document).ready(function() {
             $('#add-output').html(data);
         })
     })
+    $('#delete button[type="submit"]').click((event) => {
+        event.preventDefault()
+        $.get('/delete_student',{
+            ID:   $('#delete input[name=ID]').val()
+        },(data)=>{
+            $('#delete-output').html(data);
+        })
+    })
 });
